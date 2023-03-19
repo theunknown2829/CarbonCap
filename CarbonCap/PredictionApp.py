@@ -112,7 +112,7 @@ def preds():
                 img = Image(source='my_plot.png')
                 layout.add_widget(img)
                 
-                home_button = Button(background_normal='home.png', size_hint=(0.12, 0.22), pos_hint={'right': 0.12})
+                home_button = Button(background_normal='images/home.png', size_hint=(0.12, 0.22), pos_hint={'right': 0.12})
                 home_button.bind(on_touch_down=self.home)
                 layout.add_widget(home_button)
                 return layout
@@ -165,7 +165,7 @@ def preds():
         def build(self):
             Window.clearcolor = (255/255,243/255,200/255,1)
             layout = FloatLayout(size=(Window.width, Window.height))
-            header_image = Image(source='Prediction.png',
+            header_image = Image(source='images/Prediction.png',
                                  size_hint=(1, 0.4),
                                  pos_hint={'top': 1})
             layout.add_widget(header_image)
