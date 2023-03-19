@@ -21,22 +21,22 @@ class MyApp(App):
         for i in range (1):
             empty_widget= Widget()
             layout.add_widget(empty_widget)
-        title = Image(source='switches.png',size_hint=(1, None), allow_stretch=True, height=300)
+        title = Image(source='images/switches.png',size_hint=(1, None), allow_stretch=True, height=300)
         layout.add_widget(title)
         for i in range (1):
             empty_widget= Widget()
             layout.add_widget(empty_widget)
 
-        bedoff = Image(source='bedoff.png',size_hint=(1, None), allow_stretch=True, height=200)
+        bedoff = Image(source='images/bedoff.png',size_hint=(1, None), allow_stretch=True, height=200)
         layout.add_widget(bedoff)
-        bathoff = Image(source='bathoff.png',size_hint=(1, None), allow_stretch=True, height=200)
+        bathoff = Image(source='images/bathoff.png',size_hint=(1, None), allow_stretch=True, height=200)
         layout.add_widget(bathoff)
         for i in range (1):
             empty_widget= Widget()
             layout.add_widget(empty_widget)
-        longoff = Image(source='longoff.png',size_hint=(1, None), allow_stretch=True, height=200)
+        longoff = Image(source='images/longoff.png',size_hint=(1, None), allow_stretch=True, height=200)
         layout.add_widget(longoff)
-        kitchenoff = Image(source='kitchenoff.png',size_hint=(1, None), allow_stretch=True, height=200)
+        kitchenoff = Image(source='images/kitchenoff.png',size_hint=(1, None), allow_stretch=True, height=200)
         layout.add_widget(kitchenoff)
 
         return layout
