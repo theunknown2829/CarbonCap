@@ -1,0 +1,55 @@
+<EnergyWindow>:
+    current_temp: current_temp_input
+    prediction_month: prediction_month_input
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: 0.3
+    
+    GridLayout:
+        cols: 2
+        spacing: 10
+        padding: 50
+        size_hint: (None, None)
+        size: (500, 300)
+        pos_hint: {'center_x': 0.4, 'center_y': 0.5}
+        
+        Label:
+            text: "Current temperature:"
+            size_hint_x: None
+            width: self.texture_size[0]
+            font_size: 60
+            color: (0, 0, 0, 1)
+            
+        TextInput:
+            id: current_temp_input
+            size_hint_x: None
+            width: 250
+            height: 60
+            
+        Label:
+            text: "Prediction month:"
+            size_hint_x: None
+            width: self.texture_size[0]
+            font_size: 60
+            color: (0, 0, 0, 1)
+            
+        TextInput:
+            id: prediction_month_input
+            size_hint_x: None
+            width: 250
+            height: 60
+            
+        Button:
+            text: "Predict"
+            size_hint_x: None
+            width: 200
+            height: 50
+            on_release: root.predict()
+            
+
+
+        
+
+
+

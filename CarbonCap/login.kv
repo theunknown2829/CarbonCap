@@ -1,0 +1,141 @@
+#gui
+# there are three screens
+WindowManager:
+	loginWindow:
+	signupWindow:
+	successWindow:
+
+
+<MyLayout>
+    canvas.before:
+	Rectangle:
+	    pos: self.pos
+	    size: self.size
+
+# GUI for the login window
+<loginWindow>:
+	email : email
+	pwd : pwd
+	FloatLayout:
+		size: root.width, root.height
+		Label:
+			text : "Email: "
+			color: 0,0,0,1
+			size_hint : 0.2, 0.1
+			pos_hint : {"x":0.25, "top":0.9}
+			background_color: (245/255, 245/255, 220/255, 1)
+			canvas.before:
+				Color:
+					rgba: self.background_color
+		TextInput:
+			id : email
+			multiline :False
+			size_hint : 0.3, 0.1
+			pos_hint : {"x" : 0.45, "top" : 0.9}
+		Label:
+			text : "Password: "
+			color: 0,0,0,1
+			size_hint : 0.2, 0.1
+			pos_hint : {"x" : 0.25, "top" : 0.7}
+			
+		TextInput:
+			id : pwd
+			multiline :False
+			size_hint : 0.3, 0.1
+			pos_hint : {"x" : 0.45, "top" : 0.7}
+		Button:
+			text : "Create an account"
+			size_hint : 0.4, 0.1
+			pos_hint : {"x" : 0.33, "top" : 0.4}
+			background_color: (240/255,240/255,200/255,1)
+			on_release:
+				app.root.current = 'signup'
+				root.manager.transition.direction = "left"
+		Button:
+			text : "Login"
+			color : 245/255,245/255,220/255,1
+			size_hint : 0.3, 0.1
+			pos_hint : {"x" : 0.39, "top" : 0.2}
+			background_color: (148/255,107/255,69/255)
+			on_release:
+				root.validate()
+				root.manager.transition.direction = "up"
+
+# GUI for the signup window
+<signupWindow>:
+	name2 : name2
+	email : email
+	pwd : pwd
+	FloatLayout:
+		Label:
+			text : "Name: "
+			color: 0,0,0,1
+			size_hint : 0.2, 0.1
+			pos_hint : {"x":0.25, "top":0.9}
+		TextInput:
+			id : name2
+			multiline : False
+			size_hint : 0.3, 0.1
+			pos_hint : {"x" : 0.45, "top" : 0.9}
+		Label:
+			text : "Email: "
+			color: 0,0,0,1
+			size_hint : 0.2, 0.1
+			pos_hint : {"x" : 0.25, "top" : 0.7}
+		TextInput:
+			id : email
+			multiline : False
+			size_hint : 0.3, 0.1
+			pos_hint : {"x" : 0.45, "top" : 0.7}
+		Label:
+			text : "Password: "
+			color: 0,0,0,1
+			size_hint : 0.2, 0.1
+			pos_hint : {"x" : 0.25, "top" : 0.5}
+		TextInput:
+			id : pwd
+			multiline : False
+			size_hint : 0.3, 0.1
+			pos_hint : {"x" : 0.45, "top" : 0.5}
+		Button:
+			text : "Submit"
+			size_hint : 0.3, 0.1
+			pos_hint : {"x" : 0.39, "top" : 0.28}
+			background_color: (148/255,107/255,69/255)
+			on_press :
+				root.signupbtn()
+				root.manager.transition.direction = "right"
+
+# GUI to show validation result
+<successWindow>:
+	info : info
+	FloatLayout:
+		Label:
+			id : info
+			size_hint : 0.8, 0.2
+			pos_hint : {"x" : 0.15, "top" : 0.8}
+			text : "Successfully logged in "
+		Button:
+			text : "Homepage"
+			size_hint : 0.4, 0.1
+			pos_hint : {"x" : 0.33, "top" : 0.55}
+			on_release:
+				app.root.current = 'login'
+				root.manager.transition.direction = "down"
+		Button:
+			text : "Create new account"
+			size_hint : 0.4, 0.1
+			pos_hint : {"x" : 0.33, "top" : 0.4}
+			on_release:
+				app.root.current = 'signup'
+				root.manager.transition.direction = "down"
+
+
+# GUI for pop up window
+<Pop2>:
+	Label:
+		text : "Please enter valid information"
+		size_hint : 0.2, 0.1
+		pos_hint : {"x" : 0.3, "top" : 0.8}
+		background_color: (148/255,107/255,69/255)
+
