@@ -11,4 +11,5 @@ The system is low cost and can easily be implemented in homes. Carbon Cap is des
 
 In conclusion, Carbon Cap is a software that provides a one-stop-shop for energy sustainability in the home. It centralizes current energy-saving features such as smart meters and provides additional features to augment energy consciousness, profile homeowners to gamify the energy-saving process, use AI to predict energy usage and cost, and provide home automation. The software is low cost and can easily be implemented in homes, making it an effective tool for reducing household carbon emissions in the UK. By using Carbon Cap, homeowners can make changes that will help the UK meet its national ESG goals.
 
+Disclaimer
 The homepage has been optimized to fit the Raspberry Pi screen perfectly, which means it may not be fully visible on other devices.
