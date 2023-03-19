@@ -8,6 +8,24 @@ from kivy.graphics import Color, Rectangle
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
 
+# we are commenting out the hardware code since it only works when connected to the correct hardware 
+##def control_led(user_input):
+##    led_pin = 18
+##    GPIO.setup(led_pin, GPIO.OUT)
+##    if user_input == 'on':
+##        GPIO.output(led_pin, GPIO.HIGH)
+##    elif user_input == 'off':
+##        GPIO.output(led_pin, GPIO.LOW)
+##
+##def control_ldr(user_input):
+##    ldr_pin = 23
+##    GPIO.setup(ldr_pin, GPIO.OUT)
+##    if user_input == 'on':
+##        GPIO.output(ldr_pin, GPIO.HIGH)   
+##    elif user_input == 'off':
+##        GPIO.output(ldr_pin, GPIO.LOW)
+##        
+##GPIO.cleanup()
 
 class control(App):
     def build(self):
@@ -28,12 +46,14 @@ class control(App):
         button_ecomode = Button(background_normal='images/ecomodeoff.png', background_down='images/ecomodeon.png')
         button_ecomode.bind(on_press=lambda x: self.change_image(button_ecomode, ecomodeoff))
         layout.add_widget(button_ecomode)
+        #control_ldr(user_input)
 
         switches = Image(source='images/switchoff.png', size_hint=(1, None), allow_stretch=False, height=800)
 
         button_switches = Button(background_normal='images/switcheson.png', background_down='images/switchoff.png')
         button_switches.bind(on_press=lambda x: self.change_image(button_switches, switches))
         layout.add_widget(button_switches)
+        #control_led(user_input)
 
         brightness = Image(source='images/brightoff.png', size_hint=(1, None), allow_stretch=False, height=800)
 
